@@ -1,0 +1,19 @@
+<h2>All Pets</h2>
+
+<% if @current_user.present? %>
+    <%= link_to 'PROFILE PAGE', users_current_path(@current_user.id)  %>
+<% end %>
+
+<div id="petsindex">
+
+    <ul>
+    
+        <% @pets.each do |pet| %>
+            <li>
+               <%= link_to pet.name, pet_path(pet.id)  %> 
+            </li>
+        <% end %>
+
+    </ul>
+
+</div>
