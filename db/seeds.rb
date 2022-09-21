@@ -116,5 +116,7 @@ m5 = Message.create!(
     title: "SWEEEEEEETS",
     content: "OMG I'M SO LUCKY THANK YOU SO MUCH!!! Treats are the BEST- in moderation of course! *heh heh*"
 )
+
 puts "create #{ Message.count } messages.";
 puts Message.pluck( :title).join( ', ' );
+m2.pets << p1 << p2
