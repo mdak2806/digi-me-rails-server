@@ -30,18 +30,9 @@ ActiveRecord::Schema.define(version: 2022_09_21_022735) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages_pets", force: :cascade do |t|
+  create_table "messages_pets", id: false, force: :cascade do |t|
     t.integer "messages_id"
     t.integer "pets_id"
-  end
-
-  create_table "moves", force: :cascade do |t|
-    t.string "name"
-    t.boolean "offensive"
-    t.integer "attack"
-    t.string "ability"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "pets", force: :cascade do |t|
