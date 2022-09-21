@@ -1,5 +1,5 @@
 
-User.destroy_all
+User.destroy_all;
 
 u1 = User.create!(
     name: 'Shae',
@@ -31,13 +31,13 @@ u4 = User.create!(
 )
 
 
-puts "Done! Created #{ User.count } User:"
-puts User.pluck( :name).join( ', ' )
+puts "Done! Created #{ User.count } User:";
+puts User.pluck( :name).join( ', ' );
 
 
 ################################################
 
-Pet.destroy_all
+# Pet.destroy_all
 
 p1 = Pet.create!(
     name: "Mo",
@@ -84,15 +84,12 @@ p4 = Pet.create!(
     user_id: u4.id   
 
 )
-# u1.pet << p1
-# u2.pet << p2
-# u3.pet << p3
-# u4.pet << p4
 
-puts "create #{ Pet.count } pets."
-puts Pet.pluck( :name).join( ', ' )
+
+puts "create #{ Pet.count } pets.";
+puts Pet.pluck( :name).join( ', ' );
 #############################
-Message.destroy_all
+# Message.destroy_all;
 
 m1 = Message.create!(
     title: "Victory!",
@@ -114,5 +111,5 @@ m5 = Message.create!(
     title: "SWEEEEEEETS",
     content: "OMG I'M SO LUCKY THANK YOU SO MUCH!!! Treats are the BEST- in moderation of course! *heh heh*"
 )
-puts "create #{ Message.count } messages."
-puts Message.pluck( :title).join( ', ' )
+puts "create #{ Message.count } messages.";
+puts Message.pluck( :title).join( ', ' );
