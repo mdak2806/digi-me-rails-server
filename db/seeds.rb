@@ -47,7 +47,9 @@ p1 = Pet.create!(
     species: "owlet",
     accessories: true,
     level: 1,
-    experience: 5   
+    experience: 5,
+    user_id: u1.id  
+
 )
 
 p2 = Pet.create!(
@@ -56,7 +58,9 @@ p2 = Pet.create!(
     species: "pink",
     accessories: false,
     level: 2,
-    experience: 50
+    experience: 50,
+    user_id: u2.id   
+
  
 )
 
@@ -66,7 +70,9 @@ p3 = Pet.create!(
     species: "dude",
     accessories: true,
     level: 20,
-    experience: 80
+    experience: 80,
+    user_id: u3.id   
+
 
 )
 
@@ -76,13 +82,14 @@ p4 = Pet.create!(
     species: "dude",
     accessories: true,
     level: 8,
-    experience: 10
+    experience: 10,
+    user_id: u4.id   
 
 )
-u1.pet << p1
-u2.pet << p2
-u3.pet << p3
-u4.pet << p4
+# u1.pet << p1
+# u2.pet << p2
+# u3.pet << p3
+# u4.pet << p4
 
 puts "create #{ Pet.count } pets."
 
@@ -203,10 +210,10 @@ m15 = Move.create!(
 puts "Done! Created #{ Move.count } Move:"
 puts Move.pluck( :name).join( ', ' )
 
-p1.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-p2.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-p3.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-p4.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
+# p1.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
+# p2.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
+# p3.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
+# p4.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
 
-puts "Pet #{p1.name} has moves #{p1.m1.pluck(:name).join(',')}"
-puts "NTF '#{w1.name} belongs to #{u1.name}"
+# puts "Pet #{p1.name} has moves #{p1.m1.pluck(:name).join(',')}"
+# puts "NTF '#{w1.name} belongs to #{u1.name}"
