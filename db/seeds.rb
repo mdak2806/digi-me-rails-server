@@ -37,7 +37,7 @@ puts User.pluck( :name).join( ', ' );
 
 ################################################
 
-# Pet.destroy_all
+Pet.destroy_all
 
 p1 = Pet.create!(
     name: "Mo",
@@ -93,7 +93,7 @@ puts Pet.pluck( :name).join( ', ' );
 #############################
 
 
-# Message.destroy_all;
+Message.destroy_all;
 
 m1 = Message.create!(
     title: "Victory!",

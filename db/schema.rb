@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2022_09_21_114259) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages_pets", id: false, force: :cascade do |t|
-    t.integer "messages_id"
-    t.integer "pets_id"
+  create_table "messages_pets", force: :cascade do |t|
+    t.integer "message_id"
+    t.integer "pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
