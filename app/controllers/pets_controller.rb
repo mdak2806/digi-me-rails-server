@@ -99,7 +99,7 @@ class PetsController < ApplicationController
       pet.update last_drank: Time.now
     
     else
-      pet.update experience: (Pet.experience - 50)  
+      pet.update experience: (Pet.experience -25)  
       
     end
 
