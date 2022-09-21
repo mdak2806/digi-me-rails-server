@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   post '/pets/:id/action/:action' => 'pets#update_last_action'
 
+  
 
   #resources
   resources :users
