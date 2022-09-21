@@ -1,6 +1,6 @@
-class CreateMessagesPets < ActiveRecord::Migration[5.2]
+class DropMessagesPets < ActiveRecord::Migration[5.2]
   def change
-    create_table :messages_pets do |t|
+    drop_table :messages_pets do |t|
       t.integer :messages_id
       t.integer :pets_id
       

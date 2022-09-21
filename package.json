@@ -1,5 +1,6 @@
 {
   "name": "backend-PGP-server",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "homepage": "https://github.com/mdak2806/digi-me-rails-server"
 }

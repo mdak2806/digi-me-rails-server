@@ -39,7 +39,7 @@ puts User.pluck( :name).join( ', ' )
 
 # Set species to have three different types including owlet, dude and pink
 
-# Pet.destroy_all
+Pet.destroy_all
 
 p1 = Pet.create!(
     name: "Mo",
@@ -94,6 +94,7 @@ p4 = Pet.create!(
 puts "create #{ Pet.count } pets."
 
 #############################
+Message.destroy_all
 
 m1 = Message.create!(
     title: "Victory!",
