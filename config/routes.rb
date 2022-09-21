@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   # retrieve message from db for pet to relay to user
   get '/messages/food' => 'messages#fed'
+  get '/messages/drink' => 'messages#drank'
+  get '/messages/sweets' => 'messages#sweets'
 
 
   #resources
