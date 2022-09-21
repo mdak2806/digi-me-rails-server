@@ -107,7 +107,7 @@ m3 = Message.create!(
     content: "YESSSSSSSS!!! FOOOOOOOOOD!!- *cough* I mean, thaaaaank yooouuu. Make sure you're eating too, I can't be big and strong if YOU aren't being big and strong as well!"
 )
 m4 = Message.create!(
-    title: "Drink",,
+    title: "Drink",
     content: "*sluuuuuurp* AHHH! Delicious! Make sure you're staying hydrated as well, don't want you turning into a shrivelled old prune!"
 )
 m5 = Message.create!(
