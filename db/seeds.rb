@@ -47,7 +47,9 @@ p1 = Pet.create!(
     species: "owlet",
     accessories: true,
     level: 1,
-    experience: 5   
+    experience: 5,
+    user_id: u1.id  
+
 )
 
 p2 = Pet.create!(
@@ -56,7 +58,9 @@ p2 = Pet.create!(
     species: "pink",
     accessories: false,
     level: 2,
-    experience: 50
+    experience: 50,
+    user_id: u2.id   
+
  
 )
 
@@ -66,7 +70,9 @@ p3 = Pet.create!(
     species: "dude",
     accessories: true,
     level: 20,
-    experience: 80
+    experience: 80,
+    user_id: u3.id   
+
 
 )
 
@@ -76,13 +82,14 @@ p4 = Pet.create!(
     species: "dude",
     accessories: true,
     level: 8,
-    experience: 10
+    experience: 10,
+    user_id: u4.id   
 
 )
-u1.pet << p1
-u2.pet << p2
-u3.pet << p3
-u4.pet << p4
+# u1.pet << p1
+# u2.pet << p2
+# u3.pet << p3
+# u4.pet << p4
 
 puts "create #{ Pet.count } pets."
 
