@@ -96,23 +96,23 @@ puts "create #{ Pet.count } pets."
 #############################
 
 m1 = Message.create!(
-    title: "Victory!"
+    title: "Victory!",
     content: "I won! I won! What a team we make, thanks for looking after me so I can do my best. I'm a bit thirsty after that battle, can I have a drink? Maybe you should have some water too!"
 )
 m2 = Message.create!(
-    title: "Defeat..."
+    title: "Defeat...",
     content: "Oh well, I'll get them next time. Maybe I need some more food, always need to be fueled up! Have you eaten recently? Can't expect me to do my best if you aren't doing your best too!"
 )
 m3 = Message.create!(
-    title: "FOO"
+    title: "FOO",
     content: ""
 )
 m4 = Message.create!(
-    title: ""
+    title: "",
     content: ""
 )
 m5 = Message.create!(
-    title: ""
+    title: "",
     content: ""
 )
 
