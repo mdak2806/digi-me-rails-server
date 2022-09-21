@@ -37,9 +37,7 @@ puts User.pluck( :name).join( ', ' )
 
 ################################################
 
-# Set species to have three different types including owlet, dude and pink
-
-# Pet.destroy_all
+Pet.destroy_all
 
 p1 = Pet.create!(
     name: "Mo",
@@ -92,149 +90,29 @@ p4 = Pet.create!(
 # u4.pet << p4
 
 puts "create #{ Pet.count } pets."
-
+puts Pet.pluck( :name).join( ', ' )
 #############################
+Message.destroy_all
 
 m1 = Message.create!(
-    title: "Victory!"
+    title: "Victory!",
     content: "I won! I won! What a team we make, thanks for looking after me so I can do my best. I'm a bit thirsty after that battle, can I have a drink? Maybe you should have some water too!"
 )
 m2 = Message.create!(
-    title: "Defeat..."
+    title: "Defeat...",
     content: "Oh well, I'll get them next time. Maybe I need some more food, always need to be fueled up! Have you eaten recently? Can't expect me to do my best if you aren't doing your best too!"
 )
 m3 = Message.create!(
-    title: "FOO"
-    content: ""
+    title: "Food",
+    content: "YESSSSSSSS!!! FOOOOOOOOOD!!- *cough* I mean, thaaaaank yooouuu. Make sure you're eating too, I can't be big and strong if YOU aren't being big and strong as well!"
 )
 m4 = Message.create!(
-    title: ""
-    content: ""
+    title: "Drink",
+    content: "*sluuuuuurp* AHHH! Delicious! Make sure you're staying hydrated as well, don't want you turning into a shrivelled old prune!"
 )
 m5 = Message.create!(
-    title: ""
-    content: ""
+    title: "SWEEEEEEETS",
+    content: "OMG I'M SO LUCKY THANK YOU SO MUCH!!! Treats are the BEST- in moderation of course! *heh heh*"
 )
-
-# puts "Creating Moves"
-# Move.destroy_all 
-
-# m1 = Move.create!(
-
-#     name:       'jump',
-#     offensive:  true,
-#     attack:     16,
-#     ability:    nil
-
-# )
-
-# m2 = Move.create!(
-
-#     name:       'punch-walk',
-#     offensive:  true,
-#     attack:     40,
-#     ability:    nil
-
-# )
-
-# m3 = Move.create!(
-
-#     name:       'run-hug',
-#     offensive:  true,
-#     attack:     50,
-#     ability:    nil
-
-# )
-
-# m4 = Move.create!(
-
-#     name:       'one-two',
-#     offensive:  true,
-#     attack:     40,
-#     ability:    nil
-# )
-# m5 = Move.create!(
-
-#     name:       'throw-stone',
-#     offensive:  true,
-#     attack:     40,
-#     ability:   nil
-# )
-# m6 = Move.create!(
-
-#     name:       'punch',
-#     offensive:  true,
-#     attack:     25,
-#     ability:    "The opponent's next attack only deals half damage."
-# )
-# m7 = Move.create!(
-
-#     name:       'climb',
-#     offensive:  true,
-#     attack:     20,
-#     ability:   nil
-# )
-# m8 = Move.create!(
-
-#     name:       'climb',
-#     offensive:  true,
-#     attack:     20,
-#     ability:   nil
-# )
-# m9 = Move.create!(
-
-#     name:       'KO',
-#     offensive:  false,
-#     attack:     nil,
-#     ability:   nil
-# )
-# m10 = Move.create!(
-
-#     name:       'walk',
-#     offensive:  false,
-#     attack:     nil,
-#     ability:   nil
-# )
-# m11 = Move.create!(
-
-#     name:       'sprint',
-#     offensive:  false,
-#     attack:     nil,
-#     ability:   nil
-# )
-# m12 = Move.create!(
-
-#     name:       'hurt',
-#     offensive:  false,
-#     attack:     nil,
-#     ability:   nil
-# )
-# m13 = Move.create!(
-#     name:       'drink',
-#     offensive: false,
-#     attack: nil,
-#     ability: nil
-# )
-# m14 = Move.create!(
-#     name:       'food',
-#     offensive: false,
-#     attack: nil,
-#     ability: nil
-# )
-# m15 = Move.create!(
-#     name:       'sweets',
-#     offensive: false,
-#     attack: nil,
-#     ability: nil
-# )
-
-# puts "Done! Created #{ Move.count } Move:"
-# puts Move.pluck( :name).join( ', ' )
-
-# p1.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-# p2.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-# p3.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-# p4.moves << m1 << m2 << m3 << m4 << m5 << m5 << m6 << m7 << m8 << m9 << m10 << m11 << m12 << m13 << m14 << m15
-
-# puts "Pet #{p1.name} has moves #{p1.m1.pluck(:name).join(',')}"
-# puts "NTF '#{w1.name} belongs to #{u1.name}"
+puts "create #{ Message.count } messages."
+puts Message.pluck( :title).join( ', ' )
