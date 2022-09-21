@@ -91,6 +91,7 @@ puts Pet.pluck( :name).join( ', ' );
 
 
 #############################
+Message.destroy_all
 
 
 Message.destroy_all;
