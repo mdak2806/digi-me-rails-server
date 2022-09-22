@@ -2,5 +2,11 @@
   "name": "backend-PGP-server",
   "private": true,
   "dependencies": {},
-  "homepage": "https://github.com/mdak2806/digi-me-rails-server"
+  "homepage": "https://github.com/mdak2806/digi-me-rails-server",
+  "scripts": {
+    "start": "node index.js"
+ }
+ 
+ 
+ 
 }
