@@ -10,6 +10,7 @@ class PetsController < ApplicationController
 
   # Render current Pet information on My Profile page
   def current
+
     render json: current_pet
 
   end
@@ -43,7 +44,7 @@ class PetsController < ApplicationController
       # last_slept: params[:last_slept], 
       # last_stretched: params[:last_stretched],
       # setting user_id to current_user.id which is different to params
-      user_id: current_user.id
+      user_id: params[:user_id]
       # last_drank: params[:last_drank] 
     )
     if pet.persisted?
