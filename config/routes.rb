@@ -26,12 +26,16 @@ Rails.application.routes.draw do
   # delete '/pet' => 'pets#destroy'
 
   # updates the pet's last_:action time using the servers Time.now
-  post '/pets/:id/action/:action' => 'pets#update_last_action'
+  post '/pets/:id/action/feed' => 'pets#update_last_fed'
+  post '/pets/:id/action/drink' => 'pets#update_last_drank'
+  post '/pets/:id/action/sweets' => 'pets#update_last_sweets'
+
 
   # retrieve message from db for pet to relay to user
   get '/messages/food' => 'messages#fed'
   get '/messages/drink' => 'messages#drank'
   get '/messages/sweets' => 'messages#sweets'
+
 
 
   #resources

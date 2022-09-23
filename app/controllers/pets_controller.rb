@@ -6,13 +6,11 @@ class PetsController < ApplicationController
   # Before action to verify user logged in with user id - using knock gem
   # any controller action that requies you to be logged in, i.e. needs access to current_user
   # should involve this before action 
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user, except: [:index, :show, :update_last_action]
 
   # Render current Pet information on My Profile page
   def current
     render json: current_pet
-
-
 
   end
 
@@ -88,24 +86,30 @@ class PetsController < ApplicationController
     
   end # destroy
 
-  def update_last_action
-    #   post '/pets/:id/action/:action' => 'pets#update_last_action'
+  def update_last_fed
     pet = Pet.find params[:id]
-    
-    if params[:action] == 'feed'
-      pet.update last_fed: Time.now
-    
-    elsif params[:action] == 'drink'
-      pet.update last_drank: Time.now
-    
-    else
-      pet.update experience: (Pet.experience -25)  
-      
-    end
+    pet.update last_fed: Time.now
 
+    puts pet.last_fed
     render json: pet 
   end
 
+  def update_last_drank
+    pet = Pet.find params[:id]
+    pet.update last_drank: Time.now
+
+    render json: pet
+  end
+
+  def update_last_sweets
+    pet = Pet.find params[:id]
+    petXP = pet.experience
+
+    pet.update experience: petXP - 25
+    render json: pet
+
+  end
+ 
   #######################################
   private
 
