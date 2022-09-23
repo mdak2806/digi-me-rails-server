@@ -16,6 +16,7 @@ class AccessoriesController < ApplicationController
 
     )
   end
+  end
 
   def index
     @accessories = Accessory.all

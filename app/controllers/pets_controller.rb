@@ -6,10 +6,11 @@ class PetsController < ApplicationController
   # Before action to verify user logged in with user id - using knock gem
   # any controller action that requies you to be logged in, i.e. needs access to current_user
   # should involve this before action 
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user, except: [:index, :show, :create]
 
   # Render current Pet information on My Profile page
   def current
+
     render json: current_pet
 
 
@@ -45,7 +46,7 @@ class PetsController < ApplicationController
       # last_slept: params[:last_slept], 
       # last_stretched: params[:last_stretched],
       # setting user_id to current_user.id which is different to params
-      user_id: current_user.id
+      user_id: params[:user_id]
       # last_drank: params[:last_drank] 
     )
     if pet.persisted?
