@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   #User routes
   get '/users/current' => 'users#current'
 
-  post '/user/current/update' => 'users#update'
+  post '/users/current/update' => 'users#update'
 
   #User total_score increment
   post '/users/current/add_total_score/:level' => 'users#add_total_score'

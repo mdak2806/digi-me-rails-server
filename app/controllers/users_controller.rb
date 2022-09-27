@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # Users controller the before_action what to put here
 
   #  before_action :authenticate_user
+
   def add_total_score
     current_user.update!(
        total_score: current_user.total_score + params[:level].to_i
@@ -109,27 +110,33 @@ class UsersController < ApplicationController
   #3 Update
 
   def update
-  # current_user.update!(
-  #      name: params[:name],
-  #      email: params[:email],
-  #      display_name: params[:display_name],
-  #      password: params[:password]
-  # #      pet.species: params[:pet.species],
-  # #      pet.name: params[:pet.name]
+    raise "hell"
+    current_user.update!(
+       name: params[:name],
+       email: params[:email],
+       display_name: params[:display_name],
+       password: params[:password]
+        #  pet.species: params[:pet.species],
+        #  pet.name: params[:pet.name]
 
-  #   )
-  #   if user.persisted?
-  #     # If your User model has a `to_token_payload` method, you should use that here
-  #    auth_token = Knock::AuthToken.new payload: { sub: user.id }
-  #    render json: {
-  #      user: user,
-  #      token: auth_token,
-  #      current_user,
-  #      include: :pet
-  #    }
-  #  else
-  #    render json: { error: 'Count not create user' }, status: 422
-  #  end
+      )
+      if user.persisted?
+        current_user.pet.update!(
+          name: params[:name],
+          species: params[:species]
+        )
+        # If your User model has a `to_token_payload` method, you should use that here
+        # TODO DO WE NEED IT
+      # auth_token = Knock::AuthToken.new payload: { sub: user.id }
+      render json: {
+        # user: user,
+        # token: auth_token,
+        user: current_user,
+        
+      }, include: :pet
+     else
+      render json: { error: 'Count not create user' }, status: 422
+    end
 
 
   end
@@ -144,24 +151,24 @@ class UsersController < ApplicationController
     end
   end
   
-  def update
-    # Below is used to save the updates created when editing user account
-    @user = User.find params[:id]
+  # def update
+  #   # Below is used to save the updates created when editing user account
+  #   @user = User.find params[:id]
   
-    # Below ensures that edits cant be done by anyone but current user who owns the account
-    if @user.id != @current_user.id
-      redirect_to login_path
-      return
-    end
+  #   # Below ensures that edits cant be done by anyone but current user who owns the account
+  #   if @user.id != @current_user.id
+  #     redirect_to login_path
+  #     return
+  #   end
   
-    # Once update completed redirects users to their account
-    if @user.update user_params
-      redirect_to @user
-     else
-      render :edit
-    end
+  #   # Once update completed redirects users to their account
+  #   if @user.update user_params
+  #     redirect_to @user
+  #    else
+  #     render :edit
+  #   end
   
-  end
+  # end
   
   # 4. Destroy
   # Below is used to delete accounts
