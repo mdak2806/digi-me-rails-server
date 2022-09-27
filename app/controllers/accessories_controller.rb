@@ -6,7 +6,6 @@ class AccessoriesController < ApplicationController
   def create
    
   end
-  end
 
   def index
     @accessories = Accessory.all
