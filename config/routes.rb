@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   #User routes
   get '/users/current' => 'users#current'
 
-  post '/user/signup' => 'users#create'
+  post '/user/current/update' => 'users#update'
+
+  #User total_score increment
+  post '/users/current/add_total_score/:level' => 'users#add_total_score'
 
   #pets current route
   get '/pets/current' => 'pets#current'

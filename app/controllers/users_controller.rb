@@ -10,11 +10,21 @@ class UsersController < ApplicationController
   # Users controller the before_action what to put here
 
   #  before_action :authenticate_user
+  def add_total_score
+    current_user.update!(
+       total_score: current_user.total_score + params[:level].to_i
+    )
+    render json: {total_score: current_user.total_score}
+
+  end
+
+ 
 
   # Render current user information on My Profile page
    def current
-
-     render json: current_user, include: :pet 
+    # extracting current user with Pet and scores information
+     render json: current_user, include: :pet
+    #  , methods: [:total_score]
    end
 
 
@@ -35,9 +45,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def signup
-
-  end
+ 
 
   def create
   
@@ -99,6 +107,32 @@ class UsersController < ApplicationController
   end
   
   #3 Update
+
+  def update
+  # current_user.update!(
+  #      name: params[:name],
+  #      email: params[:email],
+  #      display_name: params[:display_name],
+  #      password: params[:password]
+  # #      pet.species: params[:pet.species],
+  # #      pet.name: params[:pet.name]
+
+  #   )
+  #   if user.persisted?
+  #     # If your User model has a `to_token_payload` method, you should use that here
+  #    auth_token = Knock::AuthToken.new payload: { sub: user.id }
+  #    render json: {
+  #      user: user,
+  #      token: auth_token,
+  #      current_user,
+  #      include: :pet
+  #    }
+  #  else
+  #    render json: { error: 'Count not create user' }, status: 422
+  #  end
+
+
+  end
   
   def edit
     # Below is used to extract current user information to edit it using a partial form

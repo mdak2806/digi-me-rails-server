@@ -120,3 +120,39 @@ m5 = Message.create!(
 puts "create #{ Message.count } messages.";
 puts Message.pluck( :title).join( ', ' );
 m2.pets << p1 << p2
+
+###########################
+
+Score.destroy_all
+
+
+s1 = Score.create!(
+    level: 1,
+    user: u2   #user instead of user_id is just a shortcut to extract the same data/data_id
+)
+s2 = Score.create!(
+    level: 2,
+    user: u3
+)
+s3 = Score.create!(
+    level: 3,
+    user: u4
+)
+s4 = Score.create!(
+    level: 1,
+    user: u3
+)
+s5 = Score.create!(
+    level: 10,
+    user: u2
+)
+s6 = Score.create!(
+    level: 11,
+    user: u1
+)
+s7 = Score.create!(
+    level: 9,
+    user: u3
+)
+
+puts "create #{ Score.count } messages.";
