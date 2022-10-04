@@ -6,28 +6,32 @@ u1 = User.create!(
     email: 'shae@gmail.com',
     password: 'chicken',
     premium: false, 
-    display_name: 'Shae'
+    display_name: 'Shae',
+    total_score: 10
 )
 u2 = User.create!(
     name: 'Wen',
     email: 'wen@gmail.com',
     password: 'chicken',
     premium: false, 
-    display_name: 'Wen'
+    display_name: 'Wen', 
+    total_score: 11
 )
 u3 = User.create!(
     name: 'Craig',
     email: 'craig@gmail.com',
     password: 'chicken',
     premium: false, 
-    display_name: 'Craig'
+    display_name: 'Craig',
+    total_score: 1
 )
 u4 = User.create!(
     name: 'Mohamad',
     email: 'mo@gmail.com',
     password: 'chicken',
     premium: false, 
-    display_name: 'Mo'
+    display_name: 'Mo', 
+    total_score: 20
 )
 
 

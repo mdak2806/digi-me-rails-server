@@ -110,19 +110,19 @@ class UsersController < ApplicationController
   #3 Update
 
   def update
-    raise "hell"
+    # raise "hell"
     current_user.update!(
        name: params[:name],
        email: params[:email],
        display_name: params[:display_name],
        password: params[:password]
-        #  pet.species: params[:pet.species],
-        #  pet.name: params[:pet.name]
+      
 
       )
-      if user.persisted?
+      # we changed this to current_user as it was an error intitally
+      if current_user.persisted?
         current_user.pet.update!(
-          name: params[:name],
+          name: params[:pet_name],
           species: params[:species]
         )
         # If your User model has a `to_token_payload` method, you should use that here

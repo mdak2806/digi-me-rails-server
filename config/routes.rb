@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/login' => 'sessions#destroy' 
 
+
   #Get the login token from Knock
   post '/user_token' => 'user_token#create'
+  
   #User routes
   get '/users/current' => 'users#current'
 
+  # Post 
   post '/users/current/update' => 'users#update'
 
   #User total_score increment
